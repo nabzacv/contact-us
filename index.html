@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - NABZA CV</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #fff;
+            display: flex; /* استخدام فليكس بوكس لتوسيط المحتوى */
+            flex-direction: column; /* ترتيب العناصر عموديا */
+            align-items: center; /* توسيط العناصر أفقيا */
+            min-height: 100vh; /* الصفحة تاخد ارتفاع الشاشة كاملة */
+        }
+
+        .container {
+            max-width: 700px; /* عرض أقصى للكونتينر الأساسي */
+            margin: 40px auto 20px auto; /* مسافات علوية وسفلية وتوسيط */
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            width: 100%; /* عشان يضمن ياخد الـ max-width */
+            box-sizing: border-box; /* عشان ال padding مايزودش العرض */
+        }
+
+        h1 {
+            color: #0056B3;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .section-box {
+            background-color: #f9f9f9; /* لون خفيف للمستطيلات */
+            border: 1px solid #eee; /* حدود خفيفة */
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px; /* مسافة بين المستطيلات */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* ظل خفيف */
+            text-align: center;
+        }
+
+        .section-box h2 {
+            color: #0056B3;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        .section-box p {
+            font-size: 1.1em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* تنسيق نموذج الاتصال */
+        .contact-form label {
+            display: block; /* كل ليبل ياخد سطر لوحده */
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            text-align: right; /* محاذاة النص لليمين */
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%; /* عرض كامل */
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* عشان ال padding مايزودش العرض */
+            font-size: 1em;
+            font-family: 'Arial', sans-serif; /* نفس الخط */
+            direction: rtl; /* لضمان الكتابة من اليمين لليسار */
+            text-align: right; /* محاذاة النص في الخانات */
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* السماح بتغيير ارتفاع مربع النص عموديا */
+            min-height: 120px; /* ارتفاع أدنى */
+        }
+
+        .contact-form button {
+            display: block;
+            width: 180px; /* عرض ثابت للزرار */
+            padding: 15px 25px;
+            background-color: #0056B3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 auto; /* توسيط الزرار */
+            box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3); /* ظل للزرار */
+        }
+
+        .contact-form button:hover {
+            background-color: #004494;
+            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+        }
+
+        /* تنسيق رابط الرجوع */
+        .back-link {
+            display: block;
+            width: fit-content;
+            margin: 50px auto 20px auto; /* مسافة كبيرة بعد النموذج */
+            color: #0056B3;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #004494;
+        }
+
+        .back-link .arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transform: rotate(180deg);
+            font-size: 1.3em;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>اتصل بنا</h1>
+
+        <div class="section-box">
+            <h2>مواعيد العمل</h2>
+            <p>من الأحد إلى الخميس</p>
+            <p>من الساعة 9:00 صباحًا إلى الساعة 5:00 مساءً</p>
+        </div>
+
+        <div class="section-box contact-form">
+            <h2>أرسل لنا رسالة</h2>
+            <form action="#" method="POST">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">الموضوع:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="back-link">
+            الرجوع للصفحة الرئيسية <span class="arrow">&#x2190;</span>
+        </a>
+    </div>
+
+</body>
+</html>
