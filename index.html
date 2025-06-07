@@ -57,9 +57,11 @@
 
         /* تنسيقات عامة للمحتوى */
         .container {
-            max-width: 900px; /* عرض مناسب لصفحة اتصل بنا */
-            margin: 40px auto 40px auto; /* تم تقليل المسافة من الأعلى والأسفل */
-            padding: 40px; /* تم تقليل الـ padding الداخلي */
+            /* تعديل مهم هنا: زيادة الـ max-width بشكل كبير جداً */
+            max-width: 1400px; /* أو يمكنك استخدام width: 90%; ليتمدد بنسبة من عرض الشاشة */
+            width: 90%; /* لضمان وجود هامش خفيف على الجانبين حتى في أكبر الشاشات */
+            margin: 40px auto 40px auto;
+            padding: 40px;
             background-color: #fff;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
@@ -69,7 +71,7 @@
         h1 {
             color: var(--primary-color);
             text-align: center;
-            margin-bottom: 40px; /* تم تقليل المسافة السفلية */
+            margin-bottom: 40px;
             font-size: 3.5em;
             font-weight: 800;
             position: relative;
@@ -90,8 +92,8 @@
 
         h2 {
             color: var(--primary-color);
-            margin-top: 40px; /* تم تقليل المسافة العلوية */
-            margin-bottom: 25px; /* تم تقليل المسافة السفلية */
+            margin-top: 40px;
+            margin-bottom: 25px;
             font-size: 2.5em;
             font-weight: 700;
             text-align: center;
@@ -99,17 +101,17 @@
 
         /* تنسيقات مربعات المعلومات (مواعيد العمل، نموذج الاتصال) */
         .info-box-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; /* تم تقليل المسافة بين المربعات */
-            margin-bottom: 30px; /* تم تقليل المسافة السفلية */
+            /* تعديل هنا: السماح بـ 3 أعمدة أو أعمدة أوسع على الشاشات الكبيرة */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* لضبط الأعمدة بشكل أفضل */
+            gap: 35px; /* زيادة المسافة بين المربعات على الشاشات الكبيرة */
+            margin-bottom: 30px;
         }
 
         .info-box {
             background-color: var(--accent-color);
             border: 1px solid var(--border-light);
             border-radius: 12px;
-            padding: 25px; /* تم تقليل الـ padding */
+            padding: 25px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -125,25 +127,25 @@
         }
 
         .info-box .icon-lg {
-            width: 55px; /* حجم أيقونة كبيرة (تم تقليله قليلاً) */
+            width: 55px;
             height: 55px;
             fill: var(--primary-color);
-            margin-bottom: 18px; /* تم تقليل المسافة السفلية */
+            margin-bottom: 18px;
         }
 
         .info-box h3 {
             color: var(--secondary-color);
-            font-size: 1.7em; /* تم تقليل الحجم قليلاً */
+            font-size: 1.7em;
             margin-top: 0;
-            margin-bottom: 12px; /* تم تقليل المسافة السفلية */
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .info-box p {
-            font-size: 1.05em; /* تم تقليل الحجم قليلاً */
+            font-size: 1.05em;
             line-height: 1.6;
             color: var(--text-light);
-            margin-bottom: 8px; /* تم تقليل المسافة السفلية */
+            margin-bottom: 8px;
         }
 
         .info-box a {
@@ -162,15 +164,15 @@
         .contact-form-section {
             background-color: #fff;
             border-radius: 12px;
-            padding: 35px; /* تم تقليل الـ padding */
+            padding: 35px;
             box-shadow: var(--shadow-light);
             border: 1px solid var(--border-light);
-            margin-top: 50px; /* تم تقليل المسافة العلوية */
+            margin-top: 50px;
         }
 
         .contact-form label {
             display: block;
-            margin-bottom: 8px; /* تم تقليل المسافة السفلية */
+            margin-bottom: 8px;
             font-weight: 700;
             color: var(--text-dark);
             font-size: 1.05em;
@@ -180,12 +182,12 @@
         .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 14px; /* تم تقليل الـ padding */
-            margin-bottom: 20px; /* تم تقليل المسافة السفلية */
+            padding: 14px;
+            margin-bottom: 20px;
             border: 1px solid var(--border-light);
             border-radius: 8px;
             box-sizing: border-box;
-            font-size: 1em; /* تم تقليل الحجم قليلاً */
+            font-size: 1em;
             font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
@@ -202,22 +204,22 @@
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 130px; /* تم تقليل الارتفاع الأدنى */
+            min-height: 130px;
         }
 
         .contact-form button {
             display: block;
-            width: 200px; /* تم تقليل العرض قليلاً */
-            padding: 16px 22px; /* تم تقليل الـ padding */
+            width: 200px;
+            padding: 16px 22px;
             background-color: var(--primary-color);
             color: #fff;
             border: none;
             border-radius: 30px;
-            font-size: 1.15em; /* تم تقليل الحجم قليلاً */
+            font-size: 1.15em;
             font-weight: 700;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 25px auto 0 auto; /* تم تقليل المسافة العلوية */
+            margin: 25px auto 0 auto;
             box-shadow: 0 6px 12px rgba(0, 86, 179, 0.3);
         }
 
@@ -232,17 +234,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 60px; /* تم تقليل المسافة العلوية */
-            margin-bottom: 20px; /* إضافة مسافة سفلية */
+            margin-top: 60px;
+            margin-bottom: 20px;
         }
 
         .back-to-home a {
             background-color: var(--primary-color);
             color: #fff;
             text-decoration: none;
-            padding: 16px 35px; /* تم تقليل الـ padding */
+            padding: 16px 35px;
             border-radius: 35px;
-            font-size: 1.2em; /* تم تقليل الحجم قليلاً */
+            font-size: 1.2em;
             font-weight: 700;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 8px 18px rgba(0, 86, 179, 0.4);
@@ -265,14 +267,25 @@
         }
 
         /* تصميم للموبايل (Responsive Design) */
+        @media (max-width: 1200px) { /* تطبيق بعض التعديلات قبل الوصول لشاشات صغيرة جداً */
+            .container {
+                max-width: 1000px; /* تقليل العرض قليلاً على الشاشات الأقل من 1200 بكسل */
+                padding: 35px;
+            }
+            .info-box-wrapper {
+                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
         @media (max-width: 992px) {
             .container {
-                max-width: 90%;
-                margin: 30px auto; /* تقليل الهامش على الشاشات الأصغر */
-                padding: 25px; /* تقليل الـ padding */
+                max-width: 90%; /* نعود للعرض المئوي على الأجهزة اللوحية */
+                margin: 30px auto;
+                padding: 25px;
             }
             h1 {
-                font-size: 2.5em; /* تقليل الحجم */
+                font-size: 2.5em;
                 margin-bottom: 35px;
             }
             h2 {
@@ -345,7 +358,7 @@
                 margin-bottom: 18px;
             }
             .info-box-wrapper {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة جداً */
                 gap: 15px;
                 margin-bottom: 20px;
             }
@@ -424,7 +437,7 @@
 
     <header class="header">
         <a href="https://nabzacv.blogspot.com" class="logo">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTTLuMoi2SW4uOsW7ZP-FtViLmJro2vpvc1xuXXDe3hKR3WSRdNIKX89kvw318LRukveHMtpKdrI1PpiuwCN3lEykSwoscPPIVyb33uhy9iFr8NUYSP6xcuSV-UJN2bV6LARvzfquvdFj9CbQs9jNhk-U4qGiUjPFZsbwNJSk1x3wn6mlVxvKNPCWyaOo/s1600/5.png" alt="NABZA CV Logo">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTTLuMoi2SW4uOsW7ZP-FtViLmJro2vpvc1xuXXDe3hKR3WSRdNIKX89kvw318LRukveHMtpKdrI1PpiuwCN3lEykSwoscPPIVyb33uhy9iFr8NUYSP6x1x3wn6mlVxvKNPCWyaOo/s1600/5.png" alt="NABZA CV Logo">
         </a>
     </header>
 
@@ -482,4 +495,4 @@
     </div>
 
 </body>
-    </html>
+                        </html>
