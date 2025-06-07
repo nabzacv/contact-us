@@ -58,18 +58,18 @@
         /* تنسيقات عامة للمحتوى */
         .container {
             max-width: 900px; /* عرض مناسب لصفحة اتصل بنا */
-            margin: 60px auto 60px auto;
-            padding: 50px;
+            margin: 40px auto 40px auto; /* تم تقليل المسافة من الأعلى والأسفل */
+            padding: 40px; /* تم تقليل الـ padding الداخلي */
             background-color: #fff;
             border-radius: 15px;
             box-shadow: var(--shadow-light);
-            flex-grow: 1; /* للسماح للكونتينر بالتمدد */
+            flex-grow: 1;
         }
 
         h1 {
             color: var(--primary-color);
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px; /* تم تقليل المسافة السفلية */
             font-size: 3.5em;
             font-weight: 800;
             position: relative;
@@ -90,26 +90,26 @@
 
         h2 {
             color: var(--primary-color);
-            margin-top: 50px;
-            margin-bottom: 30px;
+            margin-top: 40px; /* تم تقليل المسافة العلوية */
+            margin-bottom: 25px; /* تم تقليل المسافة السفلية */
             font-size: 2.5em;
             font-weight: 700;
-            text-align: center; /* توسيط عنوان الأقسام */
+            text-align: center;
         }
 
         /* تنسيقات مربعات المعلومات (مواعيد العمل، نموذج الاتصال) */
         .info-box-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* أعمدة متجاوبة */
-            gap: 30px; /* مسافة بين المربعات */
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; /* تم تقليل المسافة بين المربعات */
+            margin-bottom: 30px; /* تم تقليل المسافة السفلية */
         }
 
         .info-box {
             background-color: var(--accent-color);
             border: 1px solid var(--border-light);
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px; /* تم تقليل الـ padding */
             text-align: center;
             box-shadow: 0 3px 10px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -125,25 +125,25 @@
         }
 
         .info-box .icon-lg {
-            width: 60px; /* حجم أيقونة كبيرة */
-            height: 60px;
+            width: 55px; /* حجم أيقونة كبيرة (تم تقليله قليلاً) */
+            height: 55px;
             fill: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 18px; /* تم تقليل المسافة السفلية */
         }
 
         .info-box h3 {
             color: var(--secondary-color);
-            font-size: 1.8em;
+            font-size: 1.7em; /* تم تقليل الحجم قليلاً */
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 12px; /* تم تقليل المسافة السفلية */
             font-weight: 700;
         }
 
         .info-box p {
-            font-size: 1.1em;
+            font-size: 1.05em; /* تم تقليل الحجم قليلاً */
             line-height: 1.6;
             color: var(--text-light);
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* تم تقليل المسافة السفلية */
         }
 
         .info-box a {
@@ -162,30 +162,30 @@
         .contact-form-section {
             background-color: #fff;
             border-radius: 12px;
-            padding: 40px;
+            padding: 35px; /* تم تقليل الـ padding */
             box-shadow: var(--shadow-light);
             border: 1px solid var(--border-light);
-            margin-top: 60px; /* مسافة من الأعلى */
+            margin-top: 50px; /* تم تقليل المسافة العلوية */
         }
 
         .contact-form label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* تم تقليل المسافة السفلية */
             font-weight: 700;
             color: var(--text-dark);
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
 
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 15px; /* Padding أكبر للحقول */
-            margin-bottom: 25px;
+            padding: 14px; /* تم تقليل الـ padding */
+            margin-bottom: 20px; /* تم تقليل المسافة السفلية */
             border: 1px solid var(--border-light);
-            border-radius: 8px; /* حواف أكثر دائرية للحقول */
+            border-radius: 8px;
             box-sizing: border-box;
-            font-size: 1.1em;
+            font-size: 1em; /* تم تقليل الحجم قليلاً */
             font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
@@ -196,28 +196,28 @@
         .contact-form input[type="email"]:focus,
         .contact-form textarea:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* ظل خفيف عند التركيز */
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
             outline: none;
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 130px; /* تم تقليل الارتفاع الأدنى */
         }
 
         .contact-form button {
             display: block;
-            width: 220px; /* عرض أكبر للزر */
-            padding: 18px 25px;
+            width: 200px; /* تم تقليل العرض قليلاً */
+            padding: 16px 22px; /* تم تقليل الـ padding */
             background-color: var(--primary-color);
             color: #fff;
             border: none;
-            border-radius: 30px; /* شكل دائري للزر */
-            font-size: 1.2em;
+            border-radius: 30px;
+            font-size: 1.15em; /* تم تقليل الحجم قليلاً */
             font-weight: 700;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 30px auto 0 auto; /* مسافة من الأعلى وتوسيط */
+            margin: 25px auto 0 auto; /* تم تقليل المسافة العلوية */
             box-shadow: 0 6px 12px rgba(0, 86, 179, 0.3);
         }
 
@@ -232,16 +232,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 80px;
+            margin-top: 60px; /* تم تقليل المسافة العلوية */
+            margin-bottom: 20px; /* إضافة مسافة سفلية */
         }
 
         .back-to-home a {
             background-color: var(--primary-color);
             color: #fff;
             text-decoration: none;
-            padding: 18px 40px;
+            padding: 16px 35px; /* تم تقليل الـ padding */
             border-radius: 35px;
-            font-size: 1.3em;
+            font-size: 1.2em; /* تم تقليل الحجم قليلاً */
             font-weight: 700;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 8px 18px rgba(0, 86, 179, 0.4);
@@ -267,34 +268,35 @@
         @media (max-width: 992px) {
             .container {
                 max-width: 90%;
-                margin: 40px auto;
-                padding: 30px;
+                margin: 30px auto; /* تقليل الهامش على الشاشات الأصغر */
+                padding: 25px; /* تقليل الـ padding */
             }
             h1 {
-                font-size: 2.8em;
-                margin-bottom: 40px;
+                font-size: 2.5em; /* تقليل الحجم */
+                margin-bottom: 35px;
             }
             h2 {
                 font-size: 2em;
-                margin-top: 40px;
+                margin-top: 35px;
+                margin-bottom: 20px;
             }
             .info-box {
-                padding: 25px;
+                padding: 20px;
             }
             .info-box .icon-lg {
                 width: 50px;
                 height: 50px;
-                margin-bottom: 15px;
+                margin-bottom: 12px;
             }
             .info-box h3 {
-                font-size: 1.6em;
+                font-size: 1.5em;
             }
             .info-box p {
                 font-size: 1em;
             }
             .contact-form-section {
-                padding: 30px;
-                margin-top: 40px;
+                padding: 25px;
+                margin-top: 35px;
             }
             .contact-form label {
                 font-size: 1em;
@@ -302,15 +304,20 @@
             .contact-form input,
             .contact-form textarea {
                 padding: 12px;
-                margin-bottom: 20px;
+                margin-bottom: 18px;
+                font-size: 0.95em;
+            }
+            .contact-form textarea {
+                min-height: 100px;
             }
             .contact-form button {
-                width: 180px;
-                padding: 15px 20px;
-                font-size: 1.1em;
+                width: 170px;
+                padding: 14px 18px;
+                font-size: 1.05em;
+                margin-top: 20px;
             }
             .back-to-home a {
-                padding: 15px 30px;
+                padding: 14px 28px;
                 font-size: 1.1em;
             }
             .back-to-home a .arrow {
@@ -320,11 +327,12 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 25px;
+                padding: 20px;
                 border-radius: 10px;
+                margin: 25px auto;
             }
             h1 {
-                font-size: 2.2em;
+                font-size: 2em;
                 margin-bottom: 30px;
             }
             h1::after {
@@ -332,15 +340,17 @@
                 height: 3px;
             }
             h2 {
-                font-size: 1.8em;
+                font-size: 1.7em;
                 margin-top: 30px;
+                margin-bottom: 18px;
             }
             .info-box-wrapper {
-                grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة جداً */
-                gap: 20px;
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 20px;
             }
             .info-box {
-                padding: 20px;
+                padding: 18px;
             }
             .info-box .icon-lg {
                 width: 45px;
@@ -348,27 +358,36 @@
                 margin-bottom: 10px;
             }
             .info-box h3 {
-                font-size: 1.4em;
+                font-size: 1.3em;
             }
             .info-box p {
-                font-size: 0.95em;
+                font-size: 0.9em;
             }
             .contact-form-section {
-                padding: 25px;
+                padding: 20px;
                 margin-top: 30px;
             }
             .contact-form label {
-                font-size: 0.95em;
+                font-size: 0.9em;
             }
             .contact-form input,
             .contact-form textarea {
                 padding: 10px;
-                font-size: 0.9em;
+                font-size: 0.85em;
+                margin-bottom: 15px;
+            }
+            .contact-form textarea {
+                min-height: 80px;
             }
             .contact-form button {
-                width: 160px;
-                padding: 12px 18px;
-                font-size: 1em;
+                width: 150px;
+                padding: 12px 16px;
+                font-size: 0.95em;
+                margin-top: 15px;
+            }
+            .back-to-home {
+                margin-top: 40px;
+                margin-bottom: 10px;
             }
             .back-to-home a {
                 padding: 12px 25px;
@@ -387,11 +406,11 @@
                 height: 40px;
             }
             h1 {
-                font-size: 1.8em;
-                margin-bottom: 25px;
+                font-size: 1.6em;
+                margin-bottom: 20px;
             }
             h2 {
-                font-size: 1.5em;
+                font-size: 1.4em;
                 margin-top: 25px;
             }
             .container {
@@ -429,9 +448,9 @@
                     <path d="M22 6L12 13L2 6" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <h3>تواصل معنا</h3>
-                <p>للأسئلة أو الدعم لفني، يرجى التواصل عبر:</p>
-                <p><a href="nabzacv@gmail.com">nabzacv@gmail.com</a></p>
-                <p><a href="tel:+201157959631">+201157959631</a></p>
+                <p>للأسئلة أو الدعم الفني، يرجى التواصل عبر:</p>
+                <p><a href="mailto:nabzacv@gmail.com">nabzacv@gmail.com</a></p>
+                <p><a href="tel:+201157959631">01157959631</a></p>
             </div>
         </div>
 
