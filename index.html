@@ -4,162 +4,401 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اتصل بنا - NABZA CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* تعريف الألوان والمتغيرات لتسهيل التخصيص */
+        :root {
+            --primary-color: #0056B3; /* الأزرق الأساسي لموقعك */
+            --secondary-color: #004494; /* أزرق أغمق للـ hover وتفاصيل */
+            --accent-color: #ffffff; /* لون فاتح جداً للخلفيات المميزة */
+            --text-dark: #333;
+            --text-light: #555;
+            --border-light: #e0e0e0;
+            --shadow-light: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            background-color: #fff;
+            background-color: var(--accent-color);
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
         }
 
-        /* تنسيقات الهيدر */
+        /* الهيدر - كما هو متفق عليه */
         .header {
-            background-color: #0056B3; /* لون الهيدر الأزرق */
+            background-color: var(--primary-color);
             color: #fff;
             padding: 15px 20px;
             display: flex;
-            justify-content: center; /* توسيط الشعار أفقيا */
-            align-items: center; /* توسيط الشعار عموديا */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 100%; /* عشان الهيدر ياخد عرض الشاشة بالكامل */
-            box-sizing: border-box; /* عشان ال padding مايزودش العرض */
-        }
-
-        .header .logo img {
-            height: 50px; /* ارتفاع الشعار (يمكنك تغييرها) */
-            width: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-            display: block;
-            /* للتحكم في حجم الشعار من هنا: */
-            /* height: 60px; */
-            /* width: 120px; */
-        }
-        /* نهاية تنسيقات الهيدر */
-
-        .container {
-            max-width: 700px;
-            margin: 100px auto 20px auto; /* زيادة ال margin-top لتعويض الهيدر */
-            padding: 30px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             width: 100%;
             box-sizing: border-box;
         }
 
+        .header .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        /* تنسيقات عامة للمحتوى */
+        .container {
+            max-width: 900px; /* عرض مناسب لصفحة اتصل بنا */
+            margin: 60px auto 60px auto;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            flex-grow: 1; /* للسماح للكونتينر بالتمدد */
+        }
+
         h1 {
-            color: #0056B3;
+            color: var(--primary-color);
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
+            margin-bottom: 60px;
+            font-size: 3.5em;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 20px;
         }
 
-        .section-box {
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 25px;
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 50px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center; /* توسيط عنوان الأقسام */
         }
 
-        .section-box h2 {
-            color: #0056B3;
+        /* تنسيقات مربعات المعلومات (مواعيد العمل، نموذج الاتصال) */
+        .info-box-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* أعمدة متجاوبة */
+            gap: 30px; /* مسافة بين المربعات */
+            margin-bottom: 40px;
+        }
+
+        .info-box {
+            background-color: var(--accent-color);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-box:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .info-box .icon-lg {
+            width: 60px; /* حجم أيقونة كبيرة */
+            height: 60px;
+            fill: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-box h3 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
             margin-top: 0;
             margin-bottom: 15px;
-            font-size: 1.6em;
-            text-align: center;
+            font-weight: 700;
         }
 
-        .section-box p {
+        .info-box p {
             font-size: 1.1em;
-            color: #555;
-            text-align: center;
-            margin-bottom: 0;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .info-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .info-box a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
         }
 
         /* تنسيق نموذج الاتصال */
+        .contact-form-section {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-light);
+            margin-top: 60px; /* مسافة من الأعلى */
+        }
+
         .contact-form label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-            text-align: right;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1em;
         }
 
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 15px; /* Padding أكبر للحقول */
+            margin-bottom: 25px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px; /* حواف أكثر دائرية للحقول */
             box-sizing: border-box;
-            font-size: 1em;
-            font-family: 'Arial', sans-serif;
+            font-size: 1.1em;
+            font-family: 'Cairo', sans-serif;
             direction: rtl;
             text-align: right;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* ظل خفيف عند التركيز */
+            outline: none;
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
 
         .contact-form button {
             display: block;
-            width: 180px;
-            padding: 15px 25px;
-            background-color: #0056B3;
+            width: 220px; /* عرض أكبر للزر */
+            padding: 18px 25px;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
+            border-radius: 30px; /* شكل دائري للزر */
+            font-size: 1.2em;
+            font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 86, 179, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 30px auto 0 auto; /* مسافة من الأعلى وتوسيط */
+            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.3);
         }
 
         .contact-form button:hover {
-            background-color: #004494;
-            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 86, 179, 0.4);
         }
 
-        /* تنسيق رابط الرجوع */
-        .back-link {
-            display: block;
-            width: fit-content;
-            margin: 50px auto 20px auto;
-            color: #0056B3;
+        /* زر الرجوع للصفحة الرئيسية - بتصميم عصري ومميز */
+        .back-to-home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .back-to-home a {
+            background-color: var(--primary-color);
+            color: #fff;
             text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #004494;
-        }
-
-        .back-link .arrow {
-            display: inline-block;
-            margin-left: 8px;
-            transform: rotate(180deg);
+            padding: 18px 40px;
+            border-radius: 35px;
             font-size: 1.3em;
-            line-height: 1;
-            vertical-align: middle;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0, 86, 179, 0.4);
+            display: flex;
+            align-items: center;
         }
+
+        .back-to-home a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(0, 86, 179, 0.5);
+        }
+
+        .back-to-home a .arrow {
+            display: inline-block;
+            margin-right: 12px;
+            transform: rotate(180deg);
+            font-size: 1.7em;
+            line-height: 1;
+        }
+
+        /* تصميم للموبايل (Responsive Design) */
+        @media (max-width: 992px) {
+            .container {
+                max-width: 90%;
+                margin: 40px auto;
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.8em;
+                margin-bottom: 40px;
+            }
+            h2 {
+                font-size: 2em;
+                margin-top: 40px;
+            }
+            .info-box {
+                padding: 25px;
+            }
+            .info-box .icon-lg {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 15px;
+            }
+            .info-box h3 {
+                font-size: 1.6em;
+            }
+            .info-box p {
+                font-size: 1em;
+            }
+            .contact-form-section {
+                padding: 30px;
+                margin-top: 40px;
+            }
+            .contact-form label {
+                font-size: 1em;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+            .contact-form button {
+                width: 180px;
+                padding: 15px 20px;
+                font-size: 1.1em;
+            }
+            .back-to-home a {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+            .back-to-home a .arrow {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                border-radius: 10px;
+            }
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+            h1::after {
+                width: 70px;
+                height: 3px;
+            }
+            h2 {
+                font-size: 1.8em;
+                margin-top: 30px;
+            }
+            .info-box-wrapper {
+                grid-template-columns: 1fr; /* عمود واحد على الشاشات الصغيرة جداً */
+                gap: 20px;
+            }
+            .info-box {
+                padding: 20px;
+            }
+            .info-box .icon-lg {
+                width: 45px;
+                height: 45px;
+                margin-bottom: 10px;
+            }
+            .info-box h3 {
+                font-size: 1.4em;
+            }
+            .info-box p {
+                font-size: 0.95em;
+            }
+            .contact-form-section {
+                padding: 25px;
+                margin-top: 30px;
+            }
+            .contact-form label {
+                font-size: 0.95em;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            .contact-form button {
+                width: 160px;
+                padding: 12px 18px;
+                font-size: 1em;
+            }
+            .back-to-home a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .back-to-home a .arrow {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+            }
+            .header .logo img {
+                height: 40px;
+            }
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+            h2 {
+                font-size: 1.5em;
+                margin-top: 25px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -168,39 +407,59 @@
         <a href="https://nabzacv.blogspot.com" class="logo">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTTLuMoi2SW4uOsW7ZP-FtViLmJro2vpvc1xuXXDe3hKR3WSRdNIKX89kvw318LRukveHMtpKdrI1PpiuwCN3lEykSwoscPPIVyb33uhy9iFr8NUYSP6xcuSV-UJN2bV6LARvzfquvdFj9CbQs9jNhk-U4qGiUjPFZsbwNJSk1x3wn6mlVxvKNPCWyaOo/s1600/5.png" alt="NABZA CV Logo">
         </a>
-        </header>
+    </header>
 
     <div class="container">
         <h1>اتصل بنا</h1>
 
-        <div class="section-box">
-            <h2>مواعيد العمل</h2>
-            <p>من الأحد إلى الخميس</p>
-            <p>من الساعة 9:00 صباحًا إلى الساعة 5:00 مساءً</p>
+        <div class="info-box-wrapper">
+            <div class="info-box">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 6V12L16 14" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>مواعيد العمل</h3>
+                <p>من الأحد إلى الخميس</p>
+                <p>من الساعة 9:00 صباحًا إلى 5:00 مساءً</p>
+            </div>
+
+            <div class="info-box">
+                <svg class="icon-lg" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="#0056B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>تواصل معنا</h3>
+                <p>للأسئلة أو الدعم لفني، يرجى التواصل عبر:</p>
+                <p><a href="nabzacv@gmail.com">nabzacv@gmail.com</a></p>
+                <p><a href="tel:+201157959631">+201157959631</a></p>
+            </div>
         </div>
 
-        <div class="section-box contact-form">
-            <h2>أرسل لنا رسالة</h2>
-            <form action="#" method="POST">
+        <h2>أرسل لنا رسالة</h2>
+
+        <div class="contact-form-section">
+            <form action="#" method="POST" class="contact-form">
                 <label for="name">الاسم:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required placeholder="أدخل اسمك كاملاً">
 
                 <label for="email">البريد الإلكتروني:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="example@domain.com">
 
                 <label for="subject">الموضوع:</label>
-                <input type="text" id="subject" name="subject" required>
+                <input type="text" id="subject" name="subject" required placeholder="موضوع الرسالة">
 
                 <label for="message">الرسالة:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..."></textarea>
 
-                <button type="submit">إرسال</button>
+                <button type="submit">إرسال الرسالة</button>
             </form>
         </div>
 
-        <a href="https://nabzacv.blogspot.com" class="back-link">
-            الرجوع للصفحة الرئيسية <span class="arrow">&#x2190;</span>
-        </a>
+        <div class="back-to-home">
+            <a href="https://nabzacv.blogspot.com">
+                <span class="arrow">&#x2190;</span> الرجوع للصفحة الرئيسية
+            </a>
+        </div>
     </div>
 
 </body>
